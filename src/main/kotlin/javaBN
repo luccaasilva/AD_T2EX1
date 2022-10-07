@@ -1,0 +1,23 @@
+ public void transformaBlancoNegro() throws IOException {
+        try {
+            FileInputStream f_in = new FileInputStream(f);
+            FileOutputStream f_out = new FileOutputStream("/home/INFORMATICA/alu10471699/Baixades/"+getNombreSinExtension()+"_bn.bmp");
+            int pixel = 0;
+            int r = 0;
+            int g = 0;
+            for (int i = 0; i < 54; i++) {
+                pixel = f_in.read();
+                f_out.write(pixel);
+            }
+            while (pixel != -1) {
+                pixel = f_in.read();
+                r = f_in.read();
+                g = f_in.read();
+                f_out.write((pixel+r+g)/3);
+                f_out.write((pixel+r+g)/3);
+                f_out.write((pixel+r+g)/3);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }

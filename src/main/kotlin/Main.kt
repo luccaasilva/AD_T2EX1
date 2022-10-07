@@ -5,6 +5,6 @@ fun main(args: Array<String>) {
 
     val file = FitxerImatge(f)
     file.transformaNegatiu()
-//    file.transformaObscur()
-//    file.transformaBlancNegre()
+    file.transformaObscur()
+    file.transformaBlancNegre()
 }
